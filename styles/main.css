@@ -1,0 +1,50 @@
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    min-height: 100vh;
+}
+
+.gallery {
+    background-color: #111;
+    display: grid;
+    place-items: center;
+}
+
+.gallery div {
+    position: relative;
+    width: 400px;
+    height: 600px;
+}
+
+.gallery div img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.info {
+    display: grid;
+    place-items: center;
+}
+
+.info h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.info p {
+    font-size: 2rem;
+    line-height: 1.2;
+}
