@@ -9,22 +9,27 @@ images.forEach((image) => {
   image.style.zIndex = z;
 });
 
-const revealTimeline = gsap.timeline();
+gsap.set(images, { opacity: 0 });
 
-revealTimeline
-  .set(images, {
-    x: () => 500 * Math.random() - 250,
-    y: '500%',
-    rotation: () => 90 * Math.random() - 45,
-  })
-  .to(images, {
-    x: 0,
-    y: 0,
-    stagger: -0.25,
-  })
-  .to(images, {
-    rotation: () => 16 * Math.random() - 8,
-  });
+imagesLoaded(images, () => {
+  const revealTimeline = gsap.timeline();
+
+  revealTimeline
+    .set(images, {
+      x: () => 500 * Math.random() - 250,
+      y: '500%',
+      rotation: () => 90 * Math.random() - 45,
+      opacity: 1,
+    })
+    .to(images, {
+      x: 0,
+      y: 0,
+      stagger: -0.25,
+    })
+    .to(images, {
+      rotation: () => 16 * Math.random() - 8,
+    });
+});
 
 gallery.addEventListener('click', () => {
   z -= 1;
